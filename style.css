@@ -1,10 +1,18 @@
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 /*Container  */
 .container {
   position: relative;
   width: 375px;
   height: 812px;
-  margin-top: 241px;
-  margin-left: 407px;
+
   border: 0.5px solid #dee2e6;
   background-color: #ffffff;
 }
@@ -33,6 +41,7 @@ ul {
   color: #a3a3a3;
   font-size: 19px;
   font-family: "Inter";
+  list-style-type: circle;
 }
 /*Input List */
 .container-input {
@@ -83,6 +92,16 @@ button:hover {
 }
 /* dark mode*/
 .dark-mode {
-    background-color: #000;
-    color: #fff;
-  }
+  background-color: #000;
+  color: #fff;
+}
+/*styling list-flex x */
+ul#list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+ul#list button {
+  margin-left: 10px;
+  font-size: 12px;
+}

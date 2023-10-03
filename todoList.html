@@ -13,12 +13,16 @@
         <h2>My Tasks</h2>
       </div>
       <div class="list">
-        <ul id="list" style="list-style-type: circle"></ul>
+        <ul id="list">
+          <li>Task text <button>X</button></li>
+        </ul>
       </div>
       <div class="container-input">
         <input id="add" type="text" placeholder="Add new task" />
 
-        <button class="todo-button" onclick="addTask()">+</button>
+        <button id="add-button" class="todo-button" onclick="addTask()">
+          +
+        </button>
       </div>
     </div>
     <div>
