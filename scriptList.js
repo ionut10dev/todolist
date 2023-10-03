@@ -1,12 +1,10 @@
-
-
 // localStorage
 function loadTasks() {
   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   const list = document.getElementById("list");
 
   tasks.forEach((taskText) => {
-    const li = createTaskElement(taskText); // Create task element with "X" button
+    const li = createTaskElement(taskText);
     list.appendChild(li);
   });
 }
@@ -14,7 +12,7 @@ function loadTasks() {
 // task and save to localStorage
 function addTask() {
   const valueAdd = document.getElementById("add").value;
-  if (!valueAdd) return alert("Please add a value"); // Don't add empty tasks
+  if (!valueAdd) return alert("Please add a value");
 
   const list = document.getElementById("list");
   const li = createTaskElement(valueAdd);
@@ -60,6 +58,14 @@ function toggleDarkMode() {
 
   const isDarkMode = container.classList.contains("dark-mode");
   localStorage.setItem("dark-mode", isDarkMode);
+
+  // change text button
+  var button = document.getElementById("dark-mode-button");
+  if (button.innerText === "dark mode") {
+    button.innerText = "light mode";
+  } else {
+    button.innerText = "dark mode";
+  }
 }
 
 // x- button
@@ -80,7 +86,7 @@ function createTaskElement(taskText) {
 document.getElementById("list").addEventListener("click", function (event) {
   if (event.target.tagName === "BUTTON") {
     const li = event.target.parentElement;
-    const text = li.textContent.trim(); 
+    const text = li.textContent.trim();
     removeTask(text);
   }
 });
