@@ -32,11 +32,12 @@ function removeTask(text) {
   const listItems = list.getElementsByTagName("li");
 
   for (let i = 0; i < listItems.length; i++) {
-    if (listItems[i].textContent === text) {
+    const listItemText = listItems[i].textContent.replace("X", "").trim();
+    if (listItemText === text) {
       list.removeChild(listItems[i]);
       const tasks = JSON.parse(localStorage.getItem("tasks"));
-      const updateTask = tasks.filter((x) => x !== text);
-      localStorage.setItem("tasks", JSON.stringify(updateTask));
+      const updatedTasks = tasks.filter((x) => x !== listItemText);
+      localStorage.setItem("tasks", JSON.stringify(updatedTasks));
       break;
     }
   }

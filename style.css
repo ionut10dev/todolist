@@ -43,6 +43,20 @@ ul {
   font-family: "Inter";
   list-style-type: circle;
 }
+.list ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*  X button */
+.list ul li button {
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
 /*Input List */
 .container-input {
   display: flex;
@@ -112,7 +126,7 @@ button:hover {
 
 /* Hover effect for the button */
 .todo-button:hover {
-  background-color: #0056b3; 
+  background-color: #0056b3;
 }
 /*styling list-flex x */
 ul#list li {
